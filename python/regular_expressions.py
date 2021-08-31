@@ -82,3 +82,15 @@ print(p.findall('life is too short'))  # ['life', 'is', 'too', 'short']
 # 4. finditer
 # findall과 동일하지만, finditer는 반복가능한 객체를 돌려준다.
 print(p.finditer('hello python'))  # <callable_iterator object at 0x00000164DF1C6F28>
+
+# 문자열 바꾸기
+# sub 메서드를 사용해 문자열의 일부분을 다른 문자로 쉽게 바꿀수있다. sub(바꿀 문자열, 대상 문자열)
+# sub(self, repl: AnyStr, string: AnyStr, count: int = ...) -> AnyStr: ...
+P = re.compile('(blue|white|pink)')
+print(P.sub('color', 'blue shirt and pink shirt'))  # color shirt and color shirt
+
+# 문자열 바꾸기 예제
+# 주민등록번호의 뒷자리를 * 문자로 변경하시오.
+data = "kim 990101-1234567"
+pat = re.compile('(\d{6})[-]\d{7}')
+print(pat.sub("\g<1>-*******", data))  # kim 990101-*******
