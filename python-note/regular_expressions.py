@@ -14,7 +14,7 @@ print(result1)  # ['a', 'b', 'a', 'b', 'c']
 
 # \d: 숫자와 매치. [0-9]와 동일한 표현식이다.
 # \D: 숫자가 아닌것과 매치. [^0-9]와 동일. (^는 not을 의미함)
-expression = "study python 2021-08-31"
+expression = "study python-note 2021-08-31"
 
 result_d = re.findall('(\d)', expression)
 print(result_d)  # ['2', '0', '2', '1', '0', '8', '3', '1']
@@ -25,7 +25,7 @@ print(result_D)  # ['s', 't', 'u', 'd', 'y', ' ', 'p', 'y', 't', 'h', 'o', 'n', 
 # \s: whitespace 문자와 매치. [ \t\n\r\f\v]와 동일한 표현식.
 # \S: whitespace 문자가 아닌것과 매치. [^ \t\n\r\f\v]와 동일한 표현식.
 result_s = re.split('(\s)', expression)
-print(result_s)  # ['study', ' ', 'python', ' ', '2021-08-31']
+print(result_s)  # ['study', ' ', 'python-note', ' ', '2021-08-31']
 
 result_S = re.split('(\S)', expression)
 print(result_d)  # ['2', '0', '2', '1', '0', '8', '3', '1']
@@ -69,11 +69,11 @@ print(p5_2.findall('cat caat caaaaat'))  # ['caat', 'caaaaat']
 # 1. match
 # 문자열의 처음부터 정규식과 매치되는지 조사한다.
 p = re.compile('[a-z]+')
-print(p.match('3 python'))  # None (정규식에 부합되지 않음)
+print(p.match('3 python-note'))  # None (정규식에 부합되지 않음)
 
 # 2. search
 # 문자열의 전체를 검색해 정규식과 매치되는지 조사.
-print(p.search('3 python'))  # <_sre.SRE_Match object; span=(2, 8), match='python'>
+print(p.search('3 python-note'))  # <_sre.SRE_Match object; span=(2, 8), match='python-note'>
 
 # 3. findall
 # 정규식과 매치되는 요소들을 리스트로 반환
@@ -81,7 +81,7 @@ print(p.findall('life is too short'))  # ['life', 'is', 'too', 'short']
 
 # 4. finditer
 # findall과 동일하지만, finditer는 반복가능한 객체를 돌려준다.
-print(p.finditer('hello python'))  # <callable_iterator object at 0x00000164DF1C6F28>
+print(p.finditer('hello python-note'))  # <callable_iterator object at 0x00000164DF1C6F28>
 
 # 문자열 바꾸기
 # sub 메서드를 사용해 문자열의 일부분을 다른 문자로 쉽게 바꿀수있다. sub(바꿀 문자열, 대상 문자열)
